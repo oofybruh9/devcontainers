@@ -1,0 +1,24 @@
+{
+    "id": "apache-guacamole",
+    "version": "1.0.0",
+    "name": "Apache Guacamole (VNC)",
+    "documentationURL": "https://github.com/oofybruh9/devcontainers/tree/main/src/apache-guacamole",
+    "description": "Lets you VNC (with audio!) and SSH into your devcontainer without having to always rely on VS Code.",
+    "options": {
+        "guacVer":{
+            "type":"string",
+            "description": "Version of Apache Guacamole to use",
+            "default": "latest"
+        }
+    },
+    "init": true,
+    "entrypoint": "/usr/local/share/initGuac.sh",
+    "dependsOn": {
+        "tomcat-sdkman:2":{
+            "version":"latest"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
